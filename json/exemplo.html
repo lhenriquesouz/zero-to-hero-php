@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    //getJSON pega um valor do JSON
+    //Função JQuery, com isso pega os dados que estão no site viacep -> fazendo uma requisição
+    $.getJSON('https://viacep.com.br/ws/85802000/json/', function(dados){
+      //console.log(dados);
+      enviaParaPHP(dados); // Os dados vem como objeto
+    });
+
+    function enviaParaPHP(dados){
+      var json = JSON.stringify(dados); // JSON.stringify converte objeto em texto
+      $.ajax({
+        url: 'index.php',
+        data: { texto: json },
+        type: 'POST',
+        success: function(retorno){
+          var objeto = JSON.parse(retorno); //JSON.parse converte texto em objeto
+          console.log(objeto);
+        },
+        error: function(erro){
+          alert('Houve um erro');
+        }
+      })
+    }
+  </script>
+</body>
+</html>
