@@ -41,7 +41,7 @@ if (file_exists($caminhoArquivo) && is_file($caminhoArquivo)) {
 //   /********* FAZ A MESMA COISA QUE O CÓDIGO DE CIMA FAZ PORÉM MAIS FÁCIL ************/
 //   //Porém ele pega todo o conteúdo em uma linha só transformando em 1 só string
   echo file_get_contents($caminhoArquivo);
-// }
+}
 
 if (is_dir($pasta)) {
   //Mostra tudo oque tem dentro de uma pasta, lista tudo que tem dentro scandir

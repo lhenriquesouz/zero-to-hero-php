@@ -89,9 +89,9 @@ function reArrayFiles(&$file_post) {
           //move_uploaded_file função para enviar o arquivo para o servidor.
           //Ai no caso passamos o nome temporário do arquivo ',' depois colocamos o novo nome e onde vamos salvar. 
           if (move_uploaded_file($tmp, $pasta.$novoNome)) {
-            echo '<div class="alert alert-success container" role="alert">
+            echo '<div class="alert alert-success container d-flex" role="alert">
                     <b>'.$arquivo['name'].'</b>: Upload realizado com sucesso!<br>
-                    <img class="container" style="width:300px;" src="'.$pasta.$novoNome.'">
+                    <img class="container" style="width:250px; margin-right: 0px" src="'.$pasta.$novoNome.'">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div>';
                   

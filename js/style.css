@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  background: url("https://s2.glbimg.com/U9uuyzqaJaPEOn8GWaEHM0H0Ex4=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/Y/l/ycmRwKTDuAeqIuACgvAA/xpwallpaper.jpg") 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+}
+
+.footer{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(
+    to bottom,
+    #1063c0 0%,
+    #3c8ae3 9%,
+    #1063c0 18%,
+    #1063c0 92%,
+    #404953 100%
+  );
+}
+
+.start{
+  display: flex;
+  position: sticky;
+  width: 180px;
+  height: 50px;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  color: white;
+  letter-spacing: 1.5px;
+  background: linear-gradient(
+    to bottom,
+    #28e625 0%,
+    #32cb2c 9%,
+    #089611 18%,
+    #089611 92%,
+    #394c38 100%
+  );
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: 1s;
+}
+
+.start:hover{
+  background: linear-gradient(
+    to bottom,
+    #28e625 0%,
+    #32cb2c 9%,
+    #14a11d 18%,
+    #14a11d 92%,
+    #394c38 100%
+  );
+  transition: 2s;
+}
+
+.acessorios{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 50px;
+  font-size: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  background: linear-gradient(
+    to bottom,
+    #d5dfd4 0%,
+    #c7c7c7 9%,
+    #d5dfd4 18%,
+    #d5dfd4 92%,
+    #757575 100%
+  );
+}
+
+.section-icones{
+  display: flex;
+  flex-direction: column;
+  margin: .5rem 0 0 .5rem;
+  row-gap: 1rem;
+  cursor: pointer;
+}
+
+.imagem1{
+  width: 50px;
+  height: 50px;
+  background: url('https://www.myinstants.com/media/images/transparent_button_small_normal.png.pagespeed.ce.Q_pq0WnHY3.png') no-repeat;
+  background-size: contain;
+  background-color: red; 
+  border-radius: 50%; 
+  box-shadow: 3px 3px 15px black;
+}
+
+.imagem{
+  background: url('https://www.myinstants.com/media/images/transparent_button_pressed.png.pagespeed.ce.aQzxIVJ9pw.png');
+  background-color: red; 
+  border-radius: 50%; 
+  box-shadow: 3px 3px 15px black; 
+  width: 95px;
+}
