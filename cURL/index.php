@@ -27,7 +27,7 @@ dados diretamente a uma URL.
 /*$ch = curl_init();
 
 //APONTAR A URL DESEJADA
-curl_setopt($ch, CURLOPT_URL,"https://viacep.com.br/ws/85802000/json/");
+curl_setopt($ch, CURLOPT_URL,"https://viacep.com.br/ws/37757000/json/");
 
 //ATIVAR RETORNO COMO STRING DO SERVIDOR
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -41,10 +41,12 @@ curl_close ($ch);
 //MOSTRAR RETORNO VINDO
 // echo "<pre>$retorno</pre>";
 
+//Trasnformando em um array com o parametro true
 $dados = json_decode($retorno, true);
-echo $dados["logradouro"];
-
+echo $dados["localidade"];
 */
+
+
 
 
 // EXEMPLO POST
@@ -53,7 +55,7 @@ echo $dados["logradouro"];
 $ch = curl_init();
 
 //APONTAR A URL DESEJADA
-curl_setopt($ch, CURLOPT_URL,"http://localhost/php1/cURL/teste.php");
+curl_setopt($ch, CURLOPT_URL,"http://localhost/zero-to-hero-php/cURL/teste.php");
 
 //OPÇÃO PARA DIZER QUE É POST (PADRÃO É GET)
 curl_setopt($ch, CURLOPT_POST, 1);
