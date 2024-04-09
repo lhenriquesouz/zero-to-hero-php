@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assinar Documento</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/signature_pad/dist/signature-pad.css">
+<style>
+    #signatureCanvas {
+        border: 1px solid #000; /* Adiciona uma borda preta ao redor do quadro de assinatura */
+        margin-bottom: 10px; /* Adiciona um espaço abaixo do quadro de assinatura */
+    }
+</style>
+</head>
+<body>
+<h2>Assinar Documento</h2>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    <label for="file">Selecione o Documento:</label>
+    <input type="file" name="file" id="file" required><br><br>
+    <label for="signature">Assinatura:</label><br>
+    <canvas id="signatureCanvas" width="400" height="200"></canvas><br>
+    <input type="hidden" name="signature" id="signature">
+    <button type="button" id="clearButton">Limpar Assinatura</button><br><br>
+    <button type="submit" name="submit">Assinar Documento</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/signature_pad/dist/signature_pad.umd.js"></script>
+<script>
+    var canvas = document.getElementById('signatureCanvas');
+    var signaturePad = new SignaturePad(canvas);
+
+    document.getElementById('clearButton').addEventListener('click', function () {
+        signaturePad.clear();
+    });
+
+    document.querySelector('form').addEventListener('submit', function (e) {
+        var signatureInput = document.getElementById('signature');
+        if (!signaturePad.isEmpty()) {
+            // Se a assinatura foi feita, converte-a em uma imagem base64 e a salva no campo oculto
+            signatureInput.value = signaturePad.toDataURL();
+        } else {
+            // Se a assinatura estiver vazia, impede o envio do formulário e exibe uma mensagem de alerta
+            e.preventDefault();
+            alert("Por favor, assine o documento antes de enviar.");
+        }
+    });
+</script>
+</body>
+</html>
